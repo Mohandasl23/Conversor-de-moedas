@@ -32,10 +32,25 @@ function convertValues(){
         currency: "BRL"
     }).format(inputCurrencyValue)
 
-    
-
-    console.log(convertedValue)
-    
 }
 
+function changeCurrency() {
+    const currencyName = document.getElementById("currency-name")
+    const currencyImage = document.querySelector(".currency-img")
+   
+    if (currencySelect.value == "dolar") {
+        currencyName.innerHTML = "Dólar americano"
+        currencyImage.src ="./assets/estados-unidos(1) 1.png"
+    }
+
+    if (currencySelect.value == "euro") {
+        currencyName.innerHTML = "Euro"
+        currencyImage.src ="./assets/euro.png"
+    }
+
+    
+
+}
+
+currencySelect.addEventListener("change", changeCurrency)
 convertButton.addEventListener("click", convertValues)
