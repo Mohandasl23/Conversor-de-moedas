@@ -8,6 +8,7 @@ function convertValues(){
 
     const dolarToday = 5.2
     const euroToday = 6.2
+    const libraToday = 7.2
     
 
     if(currencySelect.value =="dolar"){ 
@@ -19,11 +20,19 @@ function convertValues(){
 
     }
     if(currencySelect.value =="euro"){
-        //Seo select estiver selecionado o valor de euro, entre aqui.
+        //Se o select estiver selecionado o valor de euro, entre aqui.
         currencyValueToConverted.innerHTML = new Intl.NumberFormat("de-DE", {
             style: "currency",
             currency: "EUR"
         }).format(inputCurrencyValue / euroToday)
+        
+    }
+    if(currencySelect.value =="libra"){
+        //Se o select estiver selecionado o valor de libra, entre aqui.
+        currencyValueToConverted.innerHTML = new Intl.NumberFormat("en-GB", {
+            style: "currency",
+            currency: "GPB"
+        }).format(inputCurrencyValue / libraToday)
         
     }
 
@@ -40,7 +49,7 @@ function changeCurrency() {
    
     if (currencySelect.value == "dolar") {
         currencyName.innerHTML = "Dólar americano"
-        currencyImage.src ="./assets/estados-unidos(1) 1.png"
+        currencyImage.src ="./assets/estados-unidos (1) 1.png"
     }
 
     if (currencySelect.value == "euro") {
@@ -48,7 +57,13 @@ function changeCurrency() {
         currencyImage.src ="./assets/euro.png"
     }
 
-    
+    if (currencySelect.value == "libra") {
+        currencyName.innerHTML = "Libra"
+        currencyImage.src ="./assets/libra.png"
+    }
+
+
+    convertValues()    
 
 }
 
