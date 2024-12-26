@@ -1,6 +1,6 @@
 const convertButton = document.querySelector(".convert-button")
 const currencySelect = document.querySelector(".currency-select")
-s
+
 
 function convertValues(){
     const inputCurrencyValue = document.querySelector(".input-currency").value
